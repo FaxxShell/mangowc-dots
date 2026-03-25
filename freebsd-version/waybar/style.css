@@ -1,0 +1,84 @@
+@define-color ws @color4;
+@define-color text #FFFFFF;
+
+/* Global Font Reset */
+* {
+    font-family: "Ubuntu Nerd Font", "UbuntuNerdFont";
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    outline: none; /* Kills any focus rings */
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* --- THE CENTER PILL (TAGS) --- */
+#tags {
+    background-color: rgba(18, 19, 25, 1);
+    margin: 4px 0;
+    padding: 2px 4px; 
+    border-radius: 10px;
+    /* Gray ring removed from here */
+}
+
+#tags button {
+    font-family: "Ubuntu Nerd Font", "UbuntuNerdFont";
+    color: @text;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 4px; 
+    margin: 0 2px;  
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* THE ACTIVE ONE */
+#tags button.focused, 
+#tags button.active, 
+#tags button.selected {
+    color: #f4403e;
+    background: @ws;
+    border-radius: 6px;
+}
+
+#tags button.focused label {
+    color: #f4403e;
+}
+
+#tags button.occupied {
+    color: @text;
+}
+
+/* --- OTHER PILLS --- */
+#custom-logo, #clock, #cpu, #memory, #pulseaudio, #battery, #custom-exit, #network, #custom-wallpaper {
+    background-color: rgba(18, 19, 25, 1);
+    color: @text;
+    font-family: "Ubuntu Nerd Font", "UbuntuNerdFont";
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 12px;
+    margin: 4px 6px;
+    border-radius: 10px;
+}
+
+#custom-logo {
+    font-size: 18px;
+}
+
+/* --- THE 5-TAG LIMIT --- */
+#tags button:nth-child(n+6) {
+    font-size: 0px;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#tags button:nth-child(n+6).occupied,
+#tags button:nth-child(n+6).focused {
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 0 1px;
+}
