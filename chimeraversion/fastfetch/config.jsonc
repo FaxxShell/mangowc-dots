@@ -1,0 +1,34 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "builtin",
+        "source": "freebsd_small",
+        "color": {
+       "1": "red",
+       "2": "red"
+}
+    },
+    "display": {
+        "separator": " ⚡ ",
+        "color": {
+            "keys": "white",
+            "title": "white"
+        }
+    },
+    "modules": [
+        {
+            "type": "title",
+            "color": {
+                "at": "red"
+            }
+        },
+        "break",
+        { "type": "os",       "key": "os   " },
+        { "type": "kernel",   "key": "krnl  " },
+        { "type": "shell",    "key": "sh   " },
+        { "type": "wm",       "key": "wm/de " },
+        { "type": "uptime",   "key": "up   " },
+        { "type": "packages", "key": "pkgs  " },
+        { "type": "memory",   "key": "mem  " }
+    ]
+}

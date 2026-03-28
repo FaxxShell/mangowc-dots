@@ -1,0 +1,84 @@
+@define-color ws #f4403e; /* Matching your active tag color */
+@define-color text #FFFFFF;
+
+/* Global Font Reset */
+* {
+    font-family: "Ubuntu Nerd Font", "UbuntuNerdFont", "Ubuntu", sans-serif;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* --- THE CHIMERA PILL --- */
+#custom-logo {
+    background-color: rgba(18, 19, 25, 1);
+    background-image: url("/home/faxxshell/.config/waybar/whitechimera.png");
+    
+    /* THE GOLDILOCKS ZONE: 52% is the sweet spot */
+    background-size: 52%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* PILL DIMENSIONS: Keeping it stable */
+    min-width: 36px; 
+    min-height: 24px;
+    padding: 0;
+    margin: 4px 6px;
+    border-radius: 10px;
+}
+
+/* --- THE CENTER PILL (TAGS) --- */
+#tags {
+    background-color: rgba(18, 19, 25, 1);
+    margin: 4px 0;
+    padding: 2px 4px; 
+    border-radius: 10px;
+}
+
+#tags button {
+    color: @text;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 4px; 
+    margin: 0 2px;  
+    background: transparent;
+}
+
+/* THE ACTIVE ONE */
+#tags button.focused, 
+#tags button.active, 
+#tags button.selected {
+    color: #f4403e;
+    border-radius: 6px;
+}
+
+/* --- OTHER PILLS --- */
+#clock, #cpu, #memory, #pulseaudio, #battery, #custom-exit, #network, #custom-wallpaper {
+    background-color: rgba(18, 19, 25, 1);
+    color: @text;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 12px;
+    margin: 4px 6px;
+    border-radius: 10px;
+}
+
+/* --- THE 5-TAG LIMIT LOGIC --- */
+#tags button:nth-child(n+6) {
+    font-size: 0px;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+#tags button:nth-child(n+6).occupied,
+#tags button:nth-child(n+6).focused {
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 0 1px;
+}
